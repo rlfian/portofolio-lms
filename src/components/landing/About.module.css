@@ -1,0 +1,151 @@
+.aboutSection {
+  max-width: var(--container-max);
+  margin: 20px auto 80px auto;
+  padding: 0 24px;
+  position: relative;
+}
+
+.handwrittenLabel {
+  font-family: var(--font-handwritten);
+  font-size: 1.8rem;
+  color: var(--color-ink-muted);
+  margin-bottom: 8px;
+}
+
+.whatsUpBadge {
+  display: inline-block;
+  border: 1.5px solid var(--color-border-dark);
+  padding: 4px 18px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  background: #ffffff;
+  margin-bottom: 32px;
+  box-shadow: 2px 2px 0px var(--color-border-dark);
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr) 240px;
+  gap: 36px;
+  align-items: center;
+}
+
+.polaroidCol {
+  display: flex;
+  justify-content: center;
+}
+
+.centerBioCol {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.bioHeading {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.handwrittenBio {
+  font-family: var(--font-handwritten);
+  font-size: 1.55rem;
+  line-height: 1.45;
+  color: #27272a;
+  max-width: 520px;
+}
+
+.stampGroup {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.stampYellow {
+  background-color: var(--accent-yellow);
+  color: #713f12;
+}
+
+.stampGreen {
+  background-color: var(--accent-green);
+  color: #064e3b;
+}
+
+.stampPink {
+  background-color: var(--accent-pink);
+  color: #831843;
+}
+
+.stampBlue {
+  background-color: var(--accent-royal-blue);
+  color: #ffffff;
+}
+
+/* Biodata Card Box */
+.biodataBox {
+  margin-top: 50px;
+  background: #ffffff;
+  border: 2px solid var(--color-border-dark);
+  border-radius: 12px;
+  padding: 28px 32px;
+  box-shadow: var(--shadow-sketch-lg);
+  position: relative;
+}
+
+.biodataHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px dashed var(--color-border);
+}
+
+.biodataTitle {
+  font-size: 1.35rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.biodataGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.bioItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bioItemLabel {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-ink-muted);
+}
+
+.bioItemValue {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+@media (max-width: 960px) {
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .polaroidCol {
+    display: none;
+  }
+}

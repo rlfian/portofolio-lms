@@ -1,0 +1,144 @@
+.courseSection {
+  max-width: var(--container-max);
+  margin: 60px auto;
+  padding: 0 24px;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.handwrittenTag {
+  font-family: var(--font-handwritten);
+  font-size: 1.6rem;
+  color: var(--color-ink-muted);
+}
+
+.sectionTitle {
+  font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-top: 4px;
+}
+
+.sectionSubtitle {
+  color: var(--color-ink-muted);
+  font-size: 0.95rem;
+  margin-top: 6px;
+}
+
+.tableWrapper {
+  background: #ffffff;
+  border: 2px solid var(--color-border-dark);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sketch-lg);
+  overflow-x: auto;
+  position: relative;
+}
+
+.tableTopBar {
+  background: #fafafa;
+  border-bottom: 2px solid var(--color-border-dark);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tableTopTitle {
+  font-weight: 800;
+  font-size: 0.92rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.totalSksBadge {
+  background: var(--accent-yellow);
+  border: 1.5px solid var(--color-border-dark);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  box-shadow: 1.5px 1.5px 0px var(--color-border-dark);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.table th {
+  background: #f4f4f5;
+  color: var(--color-ink);
+  font-weight: 800;
+  padding: 14px 16px;
+  border-bottom: 2px solid var(--color-border-dark);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-ink);
+  vertical-align: middle;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background-color: #fafafa;
+}
+
+.courseCode {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  background: #f4f4f5;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+}
+
+.courseName {
+  font-weight: 700;
+  font-size: 0.98rem;
+  display: block;
+}
+
+.courseDesc {
+  font-size: 0.82rem;
+  color: var(--color-ink-muted);
+  margin-top: 2px;
+  line-height: 1.35;
+}
+
+.sksPill {
+  display: inline-block;
+  padding: 3px 10px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 800;
+  border-radius: 6px;
+  border: 1px solid #bfdbfe;
+  font-size: 0.82rem;
+}
+
+.statusActive {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #dcfce7;
+  color: #166534;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border: 1px solid #86efac;
+}

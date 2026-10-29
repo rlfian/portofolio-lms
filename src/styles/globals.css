@@ -1,0 +1,198 @@
+/* ====================================================================
+   HALLMARK STAMP: Portofolio LMS — Handcrafted Playful Notebook
+   Author: Rio Alfian & Antigravity Squad (Lead, Ian, Io, Vin)
+   Theme: Paper Grid, Washi Tape, Retro Block Display & Colorful Scalloped Tags
+   ==================================================================== */
+
+:root {
+  /* Paper & Surface Colors */
+  --bg-paper: #faf8f5;
+  --bg-grid-line: rgba(0, 0, 0, 0.045);
+  --color-surface: #ffffff;
+  --color-surface-raised: #ffffff;
+  
+  /* Text & Ink */
+  --color-ink: #18181b;
+  --color-ink-muted: #52525b;
+  --color-ink-faint: #a1a1aa;
+  --color-border: #e4e4e7;
+  --color-border-dark: #18181b;
+  
+  /* Playful Accent Palette (from reference) */
+  --accent-yellow: #fde047;
+  --accent-yellow-dark: #eab308;
+  --accent-green: #4ade80;
+  --accent-green-dark: #16a34a;
+  --accent-mint: #a7f3d0;
+  --accent-pink: #f472b6;
+  --accent-pink-dark: #db2777;
+  --accent-blue: #38bdf8;
+  --accent-blue-dark: #0284c7;
+  --accent-royal-blue: #2563eb;
+  --accent-orange: #fb923c;
+  --accent-orange-dark: #ea580c;
+  --accent-purple: #c084fc;
+  --accent-tape: rgba(147, 197, 253, 0.65);
+  --accent-tape-yellow: rgba(254, 240, 138, 0.7);
+
+  /* Typography */
+  --font-body: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-handwritten: 'Caveat', cursive, sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  /* Shadows */
+  --shadow-sketch: 3px 3px 0px #18181b;
+  --shadow-sketch-lg: 5px 5px 0px #18181b;
+  --shadow-sketch-xl: 8px 8px 0px #18181b;
+  --shadow-polaroid: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+
+  /* Container */
+  --container-max: 1120px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-x: clip;
+  min-height: 100vh;
+  background-color: var(--bg-paper);
+  /* Lined Notebook Paper Background Pattern */
+  background-image: 
+    linear-gradient(var(--bg-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bg-grid-line) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: center top;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessibility: Focus Visible */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent-royal-blue);
+  outline-offset: 3px;
+}
+
+/* Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Washi Tape Accent Decorator */
+.washi-tape {
+  position: absolute;
+  height: 22px;
+  background-color: var(--accent-tape);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.washi-tape-top-left {
+  top: -10px;
+  left: -15px;
+  width: 60px;
+  transform: rotate(-18deg);
+}
+
+.washi-tape-top-right {
+  top: -10px;
+  right: -15px;
+  width: 60px;
+  transform: rotate(18deg);
+}
+
+.washi-tape-yellow {
+  background-color: var(--accent-tape-yellow);
+}
+
+/* Polaroid Card Wrapper */
+.polaroid-frame {
+  background: #ffffff;
+  padding: 12px 12px 28px 12px;
+  border-radius: 4px;
+  box-shadow: var(--shadow-polaroid), 0 0 0 1px rgba(0,0,0,0.06);
+  position: relative;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.polaroid-frame:hover {
+  transform: translateY(-4px) rotate(1deg);
+}
+
+/* Scalloped / Stamp Badges */
+.stamp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  border-radius: 6px;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.18);
+  border: 1.5px dashed rgba(0, 0, 0, 0.2);
+  cursor: default;
+  user-select: none;
+}
+
+/* Sketch Border Button */
+.sketch-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-ink);
+  background-color: var(--accent-yellow);
+  border: 2px solid var(--color-border-dark);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sketch);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.sketch-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #18181b;
+}
+
+.sketch-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #18181b;
+}
+
+.sketch-btn-dark {
+  background-color: var(--color-border-dark);
+  color: #ffffff;
+}
+
+.sketch-btn-dark:hover {
+  color: #ffffff;
+}
+
+/* Handwritten Note Accent */
+.handwritten {
+  font-family: var(--font-handwritten);
+  font-size: 1.45rem;
+  line-height: 1.3;
+  color: var(--color-ink-muted);
+}

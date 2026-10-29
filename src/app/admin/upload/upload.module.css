@@ -1,0 +1,105 @@
+.container {
+  max-width: 760px;
+  margin: 40px auto 80px auto;
+  padding: 0 24px;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-ink-muted);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-bottom: 24px;
+}
+
+.card {
+  background: #ffffff;
+  border: 2px solid var(--color-border-dark);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sketch-xl);
+  padding: 36px 32px;
+  position: relative;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: var(--color-ink-muted);
+  font-size: 0.92rem;
+  margin-bottom: 28px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.input {
+  padding: 10px 14px;
+  border: 1.5px solid var(--color-border-dark);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+
+.textarea {
+  padding: 10px 14px;
+  border: 1.5px solid var(--color-border-dark);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  min-height: 100px;
+  resize: vertical;
+}
+
+.dropzone {
+  border: 2px dashed var(--color-border-dark);
+  border-radius: 10px;
+  padding: 32px 20px;
+  text-align: center;
+  background: #fafafa;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.dropzone:hover {
+  background: #f4f4f5;
+  border-color: var(--accent-royal-blue);
+}
+
+.dropzoneIcon {
+  margin: 0 auto 12px auto;
+  color: #71717a;
+}
+
+.dropzoneText {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-ink);
+  margin-bottom: 4px;
+}
+
+.dropzoneSubtext {
+  font-size: 0.82rem;
+  color: var(--color-ink-muted);
+}
