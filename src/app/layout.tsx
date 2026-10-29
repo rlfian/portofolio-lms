@@ -24,6 +24,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://rioalfian-lms.vercel.app'),
   title: 'Rio Alfian — Portofolio & Learning Management System (LMS)',
   description:
     'Halaman profil portofolio dan Learning Management System (LMS) Rio Alfian, Mahasiswa Teknik Informatika UIN Sunan Gunung Djati Bandung. Menampilkan tugas kuliah, biodata akademik, dan sistem ulasan dosen.',
@@ -46,9 +47,9 @@ export const metadata: Metadata = {
     siteName: 'Portofolio LMS Rio Alfian',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&h=630&q=80',
-        width: 1200,
-        height: 630,
+        url: '/profile.jpg',
+        width: 1000,
+        height: 1000,
         alt: 'Portofolio LMS Rio Alfian — Teknik Informatika UIN SGD Bandung',
       },
     ],
@@ -60,9 +61,7 @@ export const metadata: Metadata = {
     title: 'Rio Alfian — Portofolio & Learning Management System',
     description:
       'Portofolio dan LMS akademik Rio Alfian, Mahasiswa Teknik Informatika UIN Sunan Gunung Djati Bandung.',
-    images: [
-      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&h=630&q=80',
-    ],
+    images: ['/profile.jpg'],
   },
 };
 

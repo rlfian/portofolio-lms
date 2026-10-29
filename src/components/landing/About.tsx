@@ -29,11 +29,11 @@ export default function About() {
               }}
             >
               <Image
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"
-                alt="Foto profil resmi Rio Alfian"
+                src="/profile.jpg"
+                alt="Foto profil resmi Rio Alfian - Mahasiswa Teknik Informatika"
                 fill
                 sizes="200px"
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: 'cover', objectPosition: 'top center' }}
                 priority
               />
             </div>

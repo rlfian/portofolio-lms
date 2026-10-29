@@ -19,40 +19,24 @@ export default function Hero() {
       <div className={styles.nameBoxWrapper}>
         {/* Floating Avatar Left */}
         <div className={styles.floatingAvatarLeft} aria-hidden="true">
-          <div
-            style={{
-              width: '100%',
-              height: '100%',
-              backgroundColor: '#fed7aa',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontWeight: 800,
-              fontSize: '1.2rem',
-              color: '#9a3412',
-            }}
-          >
-            👨‍💻
-          </div>
+          <Image
+            src="/profile.jpg"
+            alt="Rio Alfian Avatar"
+            width={58}
+            height={58}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
+          />
         </div>
 
         {/* Floating Avatar Right */}
         <div className={styles.floatingAvatarRight} aria-hidden="true">
-          <div
-            style={{
-              width: '100%',
-              height: '100%',
-              backgroundColor: '#bbf7d0',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontWeight: 800,
-              fontSize: '1.2rem',
-              color: '#166534',
-            }}
-          >
-            🎓
-          </div>
+          <Image
+            src="/profile.jpg"
+            alt="Rio Alfian Avatar"
+            width={58}
+            height={58}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', transform: 'scaleX(-1)' }}
+          />
         </div>
 
         <div className={styles.nameBox}>
