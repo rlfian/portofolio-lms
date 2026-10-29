@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Search, Filter, BookOpen, ArrowRight, FileText, Image as ImageIcon, Archive, File } from 'lucide-react';
+import { Search, Filter, BookOpen, ArrowRight, FileText, Image as ImageIcon, Archive, File, Download } from 'lucide-react';
 import { Assignment } from '@/lib/types';
 import { COURSES } from '@/lib/constants';
 import styles from './tugas.module.css';
@@ -140,9 +140,31 @@ export default function TugasPage() {
 
                 <div className={styles.cardFooter}>
                   <span>{new Date(item.created_at).toLocaleDateString('id-ID')}</span>
-                  <Link href={`/tugas/${item.id}`} className={styles.viewBtn}>
-                    Buka Berkas <ArrowRight size={14} />
-                  </Link>
+                  <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                    <a
+                      href={`/api/download?url=${encodeURIComponent(item.file_url)}&filename=${encodeURIComponent(item.file_name)}`}
+                      download={item.file_name}
+                      title={`Unduh berkas ${item.file_name}`}
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: 30,
+                        height: 30,
+                        borderRadius: 6,
+                        border: '1.5px solid var(--color-border-dark)',
+                        background: 'var(--accent-yellow)',
+                        color: 'var(--color-ink)',
+                        textDecoration: 'none',
+                        boxShadow: '1.5px 1.5px 0px var(--color-border-dark)',
+                      }}
+                    >
+                      <Download size={14} />
+                    </a>
+                    <Link href={`/tugas/${item.id}`} className={styles.viewBtn}>
+                      Buka Berkas <ArrowRight size={14} />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </article>

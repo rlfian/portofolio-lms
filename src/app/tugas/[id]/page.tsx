@@ -16,6 +16,7 @@ export default function TugasDetailPage() {
   const [assignment, setAssignment] = useState<Assignment | null>(null);
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(true);
+  const [downloading, setDownloading] = useState(false);
 
   // Review Form State
   const [reviewerName, setReviewerName] = useState('');
@@ -55,6 +56,30 @@ export default function TugasDetailPage() {
 
     loadData();
   }, [id]);
+
+  const handleDownload = () => {
+    if (!assignment) return;
+    setDownloading(true);
+
+    try {
+      const downloadUrl = `/api/download?url=${encodeURIComponent(
+        assignment.file_url
+      )}&filename=${encodeURIComponent(assignment.file_name)}`;
+
+      const a = document.createElement('a');
+      a.href = downloadUrl;
+      a.setAttribute('download', assignment.file_name);
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    } catch (err) {
+      console.error('Download trigger error', err);
+    } finally {
+      setTimeout(() => {
+        setDownloading(false);
+      }, 2500);
+    }
+  };
 
   const handleSubmitReview = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -161,15 +186,28 @@ export default function TugasDetailPage() {
               </div>
             </div>
 
-            <a
-              href={assignment.file_url}
-              download={assignment.file_name}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="sketch-btn"
-            >
-              <Download size={16} /> Unduh Berkas Tugas
-            </a>
+            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+              <button
+                type="button"
+                onClick={handleDownload}
+                disabled={downloading}
+                className="sketch-btn"
+                title="Klik untuk langsung mengunduh berkas ke perangkat"
+              >
+                <Download size={16} />{' '}
+                {downloading ? 'Sedang Mengunduh...' : 'Unduh Berkas Tugas'}
+              </button>
+
+              <a
+                href={`/api/download?url=${encodeURIComponent(assignment.file_url)}&filename=${encodeURIComponent(assignment.file_name)}`}
+                download={assignment.file_name}
+                className="sketch-btn sketch-btn-dark"
+                title="Tautan unduh alternatif langsung"
+                style={{ fontSize: '0.82rem', padding: '10px 14px' }}
+              >
+                Unduh Langsung 📥
+              </a>
+            </div>
           </div>
         </div>
       </article>

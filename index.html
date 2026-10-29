@@ -772,9 +772,19 @@
             <p style="opacity: 0.85; line-height: 1.6; margin-bottom: 24px;">
               Platform portofolio terintegrasi LMS yang memungkinkan dosen dan pengunjung meninjau tugas mahasiswa dalam format berkas, folder, gambar, PDF, maupun teks serta meninggalkan ulasan evaluasi.
             </p>
-            <a href="https://github.com/rlfiann" target="_blank" rel="noopener noreferrer" style="color: #ffffff; font-family: var(--font-mono); font-weight: 800; font-size: 0.88rem; text-decoration: underline;">
-              VIEW REPOSITORY ON GITHUB ↗
-            </a>
+            <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+              <button
+                type="button"
+                onclick="downloadAssignmentDemo()"
+                class="sketch-btn"
+                style="background: var(--accent-yellow); color: #18181b; font-size: 0.88rem; padding: 8px 16px;"
+              >
+                📥 Unduh Berkas Tugas Ini
+              </button>
+              <a href="https://github.com/rlfiann" target="_blank" rel="noopener noreferrer" style="color: #ffffff; font-family: var(--font-mono); font-weight: 800; font-size: 0.85rem; text-decoration: underline;">
+                VIEW GITHUB ↗
+              </a>
+            </div>
           </div>
 
           <div style="background: #000; padding: 10px; border-radius: 8px; position: relative;">
@@ -805,6 +815,48 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    function downloadAssignmentDemo() {
+      const content = `====================================================================
+PORTOFOLIO LMS - DOKUMENTASI BERKAS TUGAS MAHASISWA
+Nama Mahasiswa : Rio Alfian
+NIM / Jenjang  : S-1 (Semester 5)
+Program Studi  : Teknik Informatika
+Perguruan Tinggi : UIN Sunan Gunung Djati Bandung
+Mata Kuliah    : Pengembangan Aplikasi Web (PAW)
+Judul Tugas    : Portofolio LMS Platform
+Waktu Unduh    : ${new Date().toLocaleString('id-ID')}
+====================================================================
+
+Deskripsi Berkas:
+Platform portofolio interaktif berbasis Learning Management System (LMS)
+yang terintegrasi dengan database PostgreSQL dan cloud storage untuk
+mengarsipkan tugas perkuliahan serta menampung evaluasi dan ulasan dosen.
+
+Daftar Berkas Proyek:
+1. index.html - Halaman Profil & KRS Semantik HTML5
+2. src/app/page.tsx - Landing Page Next.js 14
+3. src/app/tugas/ - Galeri Tugas dan Arsip Berkas
+4. src/app/admin/ - Portal Manajemen & Form Upload Tugas
+5. supabase/migrations/ - Skema Basis Data Relasional
+
+Kontak Pengembang:
+Email  : project.rioalfian@gmail.com
+GitHub : https://github.com/rlfiann
+====================================================================`;
+      
+      const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'TUGAS-PAW-PORTOFOLIO-LMS-RIO-ALFIAN.txt';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  </script>
 
 </body>
 </html>
